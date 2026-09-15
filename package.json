@@ -1,7 +1,7 @@
 {
   "name": "invoiceflow",
   "version": "1.0.0",
-  "description": "A calm invoice builder for freelancers and small teams.",
+  "description": "Local-first invoice builder for freelancers and small teams.",
   "private": true,
   "main": "desktop/main.cjs",
   "scripts": {
