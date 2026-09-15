@@ -1,0 +1,32 @@
+{
+  "name": "invoiceflow",
+  "version": "1.0.0",
+  "description": "A calm invoice builder for freelancers and small teams.",
+  "private": true,
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^36.3.2",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "dev.yuin.invoiceflow",
+    "productName": "Invoiceflow",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "desktop/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable",
+      "artifactName": "Invoiceflow-Portable-${version}.exe"
+    }
+  }
+}
