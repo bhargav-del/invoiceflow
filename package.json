@@ -1,7 +1,7 @@
 {
   "name": "invoiceflow",
-  "version": "1.0.0",
-  "description": "Local-first invoice builder for freelancers and small teams.",
+  "version": "1.0.5",
+  "description": "Self-contained Windows desktop invoice builder for freelancers and small teams.",
   "private": true,
   "main": "desktop/main.cjs",
   "scripts": {
@@ -29,8 +29,31 @@
       "package.json"
     ],
     "win": {
-      "target": "portable",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "asar": true,
+    "portable": {
       "artifactName": "Invoiceflow-Portable-${version}.exe"
+    },
+    "nsis": {
+      "artifactName": "Invoiceflow-Setup-${version}.exe",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
   }
 }
